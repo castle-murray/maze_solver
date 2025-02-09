@@ -1,18 +1,21 @@
 from tkinter import Tk, Canvas, BOTH
-from point import Point, Line
 
 class Window(Tk):
-    def __init__(self):
-        Tk.__init__(self)
-        self.protocol("WM_DELETE_WINDOW", self.close)
-        self.title("Maze Solver")
-        self.canvas = Canvas(self, bg="white")
-        self.canvas.pack()
+    def __init__(self,width,height):
+        super().__init__()
+        self.width = width
+        self.height = height
+        self.title("Maze_Solver")
+        self.canvas = Canvas(self, width=self.width, height=self.height)
+        self.canvas.pack(expand=True, fill=BOTH)
         self.running = False
+        self.protocol("WM_DELETE_WINDOW", self.close)
+    
 
-    def redraw(self): 
-        self.update_idletasks()
+    def redraw(self):
         self.update()
+        self.update_idletasks()
+            
 
     def wait_for_close(self):
         self.running = True
@@ -21,8 +24,3 @@ class Window(Tk):
 
     def close(self):
         self.running = False
-        
-    def draw_line(self, line, fill_color):
-        line.draw(self.canvas, fill_color)
-
-        
