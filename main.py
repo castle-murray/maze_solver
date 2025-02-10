@@ -10,8 +10,8 @@ def main():
     start_y = 15
     width = 1400
     height = 1400
-    num_cols = 50
-    num_rows = 50
+    num_cols = 100
+    num_rows = 100
     cell_size_x = (width - start_x*2 ) // num_cols
     cell_size_y = (height - start_y*2 ) // num_rows
     window = Window(width, height)

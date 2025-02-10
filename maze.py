@@ -2,7 +2,7 @@ from cellclass import Cell
 from time import sleep
 import random
 
-ANIATION_SPEED = 0.001
+ANIMATION_SPEED = 0.001
 
 class Maze:
     def __init__(
@@ -54,7 +54,7 @@ class Maze:
                 
     def _animate(self):
         self.win.redraw()
-        sleep(ANIATION_SPEED)
+        sleep(ANIMATION_SPEED)
 
     def _break_entrance_and_exit(self):
         self._cells[0][0].break_wall('top')
@@ -148,7 +148,6 @@ class Maze:
             return 0
         result = 0
         for picked in to_visit:
-            print(to_visit)
             temp_i = picked[0]
             temp_j = picked[1]
             next_cell = self._cells[temp_i][temp_j]
