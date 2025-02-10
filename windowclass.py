@@ -10,6 +10,7 @@ class Window(Tk):
         self.canvas.pack(expand=True, fill=BOTH)
         self.running = False
         self.protocol("WM_DELETE_WINDOW", self.close)
+        self.configure(bg="cyan")
     
 
     def redraw(self):
@@ -24,3 +25,7 @@ class Window(Tk):
 
     def close(self):
         self.running = False
+
+    def draw_line(self, line, color):
+        line.draw(self.canvas, color)
+
